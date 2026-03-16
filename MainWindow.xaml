@@ -21,7 +21,9 @@
             <!--// SideBar Menu //-->
             <Border x:Name="SideBar" Width="60" 
                     Grid.Column="0" HorizontalAlignment="Left"
-                    CornerRadius="20,0,0,20" Background="{StaticResource SidebarBackColor}">
+                    CornerRadius="20,0,0,20" 
+                    Background="{StaticResource SidebarBackColor}"
+                    Style="{StaticResource BorderMenuStyle}">
                 <StackPanel>
 
                     <StackPanel Style="{StaticResource LogoContainerStyle}">
@@ -62,38 +64,6 @@
                         <TextBlock Text="Tiền tệ" Style="{StaticResource TextStyle}"/>
                     </StackPanel>
                 </StackPanel>
-
-                <Border.Style>
-                    <Style TargetType="Border">
-                        <Style.Triggers>
-                            <EventTrigger RoutedEvent="MouseEnter">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetProperty="Width"
-                                         To="200" Duration="0:0:0.3">
-                                            <DoubleAnimation.EasingFunction>
-                                                <QuadraticEase EasingMode="EaseOut"/>
-                                            </DoubleAnimation.EasingFunction>
-                                        </DoubleAnimation>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-
-                            <EventTrigger RoutedEvent="MouseLeave">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetProperty="Width"
-                                         To="60" Duration="0:0:0.3">
-                                            <DoubleAnimation.EasingFunction>
-                                                <QuadraticEase EasingMode="EaseOut"/>
-                                            </DoubleAnimation.EasingFunction>
-                                        </DoubleAnimation>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </Border.Style>
 
             </Border>
             

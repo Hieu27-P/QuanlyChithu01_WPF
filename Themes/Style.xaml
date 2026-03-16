@@ -24,6 +24,37 @@
         <Setter Property="Margin" Value="10,0,0,0"/>
     </Style>
 
+    <!--// Style cho hiệu ứng ẩn/hiện SideBar Menu //-->
+    <Style x:Key="BorderMenuStyle" TargetType="Border">
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="MouseEnter">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="Width"
+                  To="200" Duration="0:0:0.3">
+                            <DoubleAnimation.EasingFunction>
+                                <QuadraticEase EasingMode="EaseOut"/>
+                            </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+
+            <EventTrigger RoutedEvent="MouseLeave">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="Width"
+                  To="60" Duration="0:0:0.3">
+                            <DoubleAnimation.EasingFunction>
+                                <QuadraticEase EasingMode="EaseOut"/>
+                            </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Style.Triggers>
+    </Style>
+
     <!--// Logo và Icon Logo //-->
     <Style x:Key="LogoContainerStyle" TargetType="StackPanel">
         <Setter Property="Margin" Value="10,20,10,30"/>
