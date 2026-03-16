@@ -5,8 +5,102 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp_QuanlyChithu"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Quản lý tài chính cá nhân" Height="600" Width="1000"
+        WindowStyle="None" WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True" Background="{x:Null}">
+   
+    <Border Grid.Column="1" CornerRadius="20" Background="LightBlue">
+        
+        <Grid>
 
-    </Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--// SideBar Menu //-->
+            <Border x:Name="SideBar" Width="60" 
+                    Grid.Column="0" HorizontalAlignment="Left"
+                    CornerRadius="20,0,0,20" Background="{StaticResource SidebarBackColor}">
+                <StackPanel>
+
+                    <StackPanel Style="{StaticResource LogoContainerStyle}">
+                        <TextBlock Text="" Style="{StaticResource LogoIconStyle}"/>
+                        <TextBlock Text="HieuK's APP" 
+                                   FontWeight="Bold" 
+                                   Foreground="White" 
+                                   FontSize="14" 
+                                   HorizontalAlignment="Center"
+                                   Margin="0,5,0,0"
+                                   Style="{StaticResource AutoHideTextStyle}"/>       
+                    </StackPanel>
+
+                    <Separator Background="#33FFFFFF" Margin="15,0,15,10"/>
+
+                    <StackPanel Style="{StaticResource NavItemStyle}">
+                        <TextBlock Text="📊" Style="{StaticResource IconStyle}"/>
+                        <TextBlock Text="Tổng quan" Style="{StaticResource TextStyle}"/>
+                    </StackPanel>
+
+                    <StackPanel Style="{StaticResource NavItemStyle}">
+                        <TextBlock Text="📝" Style="{StaticResource IconStyle}"/>
+                        <TextBlock Text="Giao dịch" Style="{StaticResource TextStyle}"/>
+                    </StackPanel>
+                    
+                    <StackPanel Style="{StaticResource NavItemStyle}">
+                        <TextBlock Text="💰" Style="{StaticResource IconStyle}"/>
+                        <TextBlock Text="Ngân sách" Style="{StaticResource TextStyle}"/>
+                    </StackPanel>
+                    
+                    <StackPanel Style="{StaticResource NavItemStyle}">
+                        <TextBlock Text="📁" Style="{StaticResource IconStyle}"/>
+                        <TextBlock Text="Danh mục" Style="{StaticResource TextStyle}"/>
+                    </StackPanel>
+                    
+                    <StackPanel Style="{StaticResource NavItemStyle}">
+                        <TextBlock Text="💱" Style="{StaticResource IconStyle}"/>
+                        <TextBlock Text="Tiền tệ" Style="{StaticResource TextStyle}"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="MouseEnter">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Width"
+                                         To="200" Duration="0:0:0.3">
+                                            <DoubleAnimation.EasingFunction>
+                                                <QuadraticEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+
+                            <EventTrigger RoutedEvent="MouseLeave">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Width"
+                                         To="60" Duration="0:0:0.3">
+                                            <DoubleAnimation.EasingFunction>
+                                                <QuadraticEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+
+            </Border>
+            
+            <!--// Main Content Area //-->
+                
+        </Grid>
+        
+    </Border>
+
 </Window>

@@ -4,6 +4,13 @@
              xmlns:local="clr-namespace:WpfApp_QuanlyChithu"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                
+                <ResourceDictionary Source="Themes/Color.xaml"/>
+                <ResourceDictionary Source="Themes/Style.xaml"/>
+                
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
